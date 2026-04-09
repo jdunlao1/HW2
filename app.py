@@ -2,10 +2,12 @@ import os
 import json
 import anthropic
 
+# Initialize client
 client = anthropic.Anthropic(
     api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
+# System prompt (final improved version)
 SYSTEM_PROMPT = """
 Convert notes into structured action items.
 
@@ -29,20 +31,27 @@ def generate(note):
             {"role": "user", "content": note}
         ]
     )
+
     return response.content[0].text
+
 
 def run_eval():
     with open("eval_set.json") as f:
         data = json.load(f)
 
-    print("\nEVALUATION RESULTS\n")
+    print("\nEVALUATION RESULTS")
 
     for case in data:
-        print("--------------------------------------------------")
-        print("Input:", case["input"])
-        print("Expected:", case["expected_behavior"])
+        print("\n" + "=" * 60)
+        print(f"Input: {case['input']}")
+        print(f"Expected: {case['expected_behavior']}")
+
         output = generate(case["input"])
-        print("\nModel Output:\n", output)
+
+        print("\nModel Output:")
+        print(output)
+        print()
+
 
 if __name__ == "__main__":
     run_eval()
