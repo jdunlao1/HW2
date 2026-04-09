@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "input": "Discussed delayed lab results. John will follow up with the lab tomorrow. Need faster turnaround.",
+    "expected_behavior": "Should identify John as owner and include follow up task related to lab results."
+  },
+  {
+    "id": 2,
+    "input": "Sarah to draft a new discharge workflow by Friday. Team will review next week.",
+    "expected_behavior": "Should identify Sarah as owner and drafting workflow as task with deadline Friday."
+  },
+  {
+    "id": 3,
+    "input": "General discussion about staffing issues. No decisions made.",
+    "expected_behavior": "Should state that no action items were found."
+  },
+  {
+    "id": 4,
+    "input": "Need to revisit reporting dashboard later.",
+    "expected_behavior": "Should identify a possible action item but note that ownership is unclear."
+  },
+  {
+    "id": 5,
+    "input": "asdf random unclear note",
+    "expected_behavior": "Should avoid hallucinating and indicate input is unclear."
+  }
+]
