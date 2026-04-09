@@ -17,3 +17,7 @@ The system produces a structured list of action items that includes:
 
 ## Value
 This task is valuable because important follow ups are often lost in long or messy notes. Automating this process improves accountability, saves time, and helps teams stay aligned.
+
+## Video Walkthrough
+
+https://youtu.be/aPrV63rmmUE
